@@ -1,0 +1,22 @@
+[package]
+name = "embedded-vector"
+version = "0.1.0"
+edition = "2024"
+authors = ["Jorge Andre Castro <georgeandrec@gmail.com>"]
+license = "GPL-2.0-or-later"
+description = "Vecteurs f32 2D, 3D et 4D pour systèmes embarqués no_std, sans unsafe, sans allocation"
+repository = "https://github.com/jorgeandrecastro/embedded-vector"
+documentation = "https://docs.rs/embedded-vector"
+readme = "README.md"
+keywords = ["vector", "math", "no-std", "embedded", "f32"]
+categories = ["mathematics", "no-std", "embedded"]
+
+[dependencies]
+embedded-f32-sqrt = "0.2"
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+panic = "abort"
+strip = true
